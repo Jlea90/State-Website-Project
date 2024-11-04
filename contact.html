@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jana Martin</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="rowrhodeisland">
+            <div class="column-1">
+        <h1 class="column-title">Rhode Island</h1><h2 class="column-subtitle">The Ocean State!</h2>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="providence.html">Providence</a></li>
+            <li><a href="newport.html">Newport</a></li>
+            <li><a href="bristol.html">Bristol</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <img src="realistic photo of Rhode Island.png" alt="Scenic View of Rhode Island" class="header-image with-gradient-border">
+
+</div>
+</div>
+    </header>
+<div class="form-group">
+        <section id="contact-form" class="contact-section">
+            <h1>Contact Us</h1>
+            <p>
+                This web form is intended to collect information from users. 
+                Please complete the fields below and ensure your email addresses match.
+            </p>
+    <img src="owl-svgrepo-com.svg" id="owl-decor">
+            <form id="contactForm" class="contact-form" onsubmit="return validateEmails()">
+                <!-- First Name Field -->
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required>
+    
+                <!-- Last Name Field -->
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required>
+    
+                <!-- Email Field -->
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <!-- Email Confirmation Field -->
+                <label for="confirm-email">Confirm Email Address:</label>
+                <input type="email" id="confirm-email" name="confirm-email" required>
+    
+                <!-- About Visitors Text Area -->
+                <label for="about-you">Tell Us About You:</label>
+                <textarea id="about-you" name="about-you" rows="4" placeholder="What brought you here?" required></textarea>
+    
+                <!-- Submit Button -->
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="our-location" class="location-section">
+            <h2>Our Location</h2>
+            <div id="map">
+            </div>
+        </section>
+    </div>   
+                <footer>
+                    <div class="social-links">
+                        <a href="https://gitlab.com/wgu-gitlab-environment/student-repos/jma3347/d277-front-end-web-development.git">
+                            <img src="gitlab.svg" class="icon" alt="gitlab logo of fox"><span id="hide-me">Check out my project here!</span></a>
+                        <a href="https://www.linkedin.com/in/janaleamartin/">
+                            <img src="linkedin-icon.svg" class="icon"><span id="hide-me">Please follow me on Linkedin!</span></a>
+                    </div>
+                        <p class="copyright-notice">&copy; 2024 Jana Martin. This website was created as part of a Software Engineering assignment for Western Governors University (WGU). All rights reserved.</p>
+                </footer>
+
+                <script>
+                    function validateEmails() {
+                        
+                        const email = document.getElementById("email").value;
+                        const confirmEmail = document.getElementById("confirm-email").value;
+            
+                        // Check if emails match
+                        if (email !== confirmEmail) {
+                            alert("The email addresses do not match. Please ensure both email fields are the same.");
+                            return false; 
+                        }
+                        return true; 
+                    }
+
+                    // Create a map instance and set the view to Rhode Island
+        var map = L.map('map').setView([41.5801, -71.4774], 10); // Coordinates for Rhode Island, zoom level 10
+
+// Add a tile layer from OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Optionally, add a marker to Rhode Island
+var marker = L.marker([41.5801, -71.4774]).addTo(map);
+marker.bindPopup("<b>Rhode Island</b><br>Explore the Ocean State!").openPopup();
+                </script>
+
+        
+    </body>
+    </html>

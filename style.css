@@ -1,0 +1,487 @@
+/* 1. Set a font-family for the entire page */
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F1F3F4;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 300px;
+    background-color: #024C61;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.rowrhodeisland {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 38px;
+    overflow: hidden;
+    
+}
+
+.column-1 {
+    z-index: 2;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: white;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+header h1 {
+    color: white;
+    font-family: 'Agbalumo' !important;
+    text-align: left;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header h2 {
+    color: #02c4f9;
+    font-size: 1.2em;
+    letter-spacing: 8.16px;
+    margin: 5px 0 0 40px;
+    text-transform: uppercase;
+    font-family: 'Agbalumo' !important;
+}
+
+nav {
+
+
+    position: absolute;
+    align-self: center;
+    z-index: 3;
+    padding: 10px 20px;
+    text-align: center;
+    width: 80%;
+    top: 2px;
+    right: 0;
+    padding-left: 10px;
+    
+   
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px;
+    font-family: 'Agbalumo' !important;
+}
+
+.active {
+    color: #02c4f9;
+    text-shadow: 1px 1px 4px rgba(229, 238, 243, 0.589); /* delete this and add shadow to text */
+}
+nav ul li a:hover {
+    color: #02c4f9;
+    text-shadow: 1px 1px 4px rgba(229, 238, 243, 0.589); /* delete this and add shadow to text */
+}
+
+.header-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    background-color: rgb(2, 76, 97);
+   
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        clip-path: none;
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    
+    header h2 {
+        font-size: 1em;
+    }
+
+    .rowrhodeisland {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .column-1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    header img {
+        width: 100%;
+        height: auto;
+        mask-image: none;
+        object-fit: contain
+    }
+}
+.main-aside-container {
+    display: flex;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+main {
+    
+    flex: 1; /* Takes up the remaining space */
+    margin-right: 20px; /* Adds space between main and aside */
+    background-color: rgb(247, 251, 252);
+}
+
+.about-top {
+    margin-bottom: 20px; /* Adds space between section and aside */
+}
+
+/* Layout Table */
+.layout-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.layout-table td {
+    vertical-align: top; /* Aligns content at the top */
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Content Cell Styling */
+.content-cell {
+    width: 60%; /* Adjust width as needed for text */
+}
+
+/* Image Cell Styling */
+.image-cell {
+    width: 40%; /* Adjust width as needed for image */
+    text-align: center; /* Centers the image within the cell */
+}
+
+.image-cell img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    margin-top: 50px;
+    border: solid darkcyan;
+}
+
+/* Header Container for h2 and Decorator */
+.header-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  
+}
+.header-container h2 {
+    background-color: #02c4f9;
+    border-radius: 2px;
+    color: white;
+    font-family: 'Agbalumo', sans-serif;
+    font-weight: 100;
+    padding: 10px 10px;
+    line-height: 25px;;
+}
+
+.decorator {
+    
+    width: 15px; /* Adjust width as needed */
+    height: 70px; /* Adjust height as needed */
+    background-color:#024C61;
+}
+
+/* About Text Styling */
+.about-text {
+    font-size: 1em;
+    line-height: 1.6;
+}
+.about-top, .about-text {
+    margin: 20px;
+    color: #2e3841;
+}
+/* Map Image Styling */
+#map img {
+    width: 100%; /* Adjust size as needed */
+    height: auto;
+    border: 1px solid #02c4f9;
+    border-radius: 8px;
+}
+
+aside {
+    float: right;
+    width: 30%; /* Adjusted to make sure it fits well */
+    padding: 10px;
+    background-color: #dae8f5;
+    border: 5px solid #6b8391;
+    line-height: 28px;
+}
+
+aside li::marker {
+    color: #6b8391;
+    font-weight: 800;
+}
+
+aside li {
+    margin: 10px;
+
+}
+
+aside h3 {
+    color: #6b8391;
+    font-weight: 800;
+    font-size: 1.2em;
+    margin-top: 5%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #2E3643;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-top: 20px; /* Space between aside and footer */
+    height: 100px;
+}
+
+footer .social-links {
+    display: flex; /* Arrange icons next to each other */
+    gap: 15px; /* Space between each icon */
+}
+
+footer a {
+    position: relative;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+footer p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+}
+footer span {
+    display: none;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #02c4f9;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.icon {
+    width: 30px;
+    height: auto;
+    margin: 0; 
+}
+footer a:hover span {
+    display: block; /* Show message when icon is hovered */
+}
+
+/* Contact Section Styling */
+.contact-section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Agbalumo', Arial, sans-serif;
+    color: #2E3643;
+}
+
+#owl-decor {
+    position: absolute;
+    width: 15%;
+    height: auto;
+    z-index: 2;
+    top: 58%;
+    right: 23%;
+    
+}
+/* Label Styling */
+.contact-form label {
+    font-weight: 100;
+    color: #024C61; /* Consistent with the rest of the website's primary color */
+    margin-bottom: 5px;
+}
+
+/* Input and Textarea Styling */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: white;
+    transition: border-color 0.3s;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #02c4f9; 
+    outline: none;
+}
+.contact-form input {
+    width: 50%;
+}
+
+.contact-form input[type="text"] {
+    width: 30%;
+}
+
+.form-group {
+    width: 80%;
+    margin: 0 auto;
+}
+/* Submit Button Styling */
+.contact-form button {
+    background-color: #024C61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+    max-width: 30%;
+    margin: 0 auto;
+}
+
+.contact-form button:hover {
+    background-color: #02c4f9; /* Changes color to match hover styling on other pages */
+}
+
+/* Location Section Styling */
+.location-section {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.location-section #map {
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    height: 500px;
+}
+
+/* Responsive Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+    .contact-section, .location-section {
+        width: 95%;
+    }
+
+    #map {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-aside-container {
+        flex-direction: column; /* Stack main and aside vertically */
+    }
+
+    aside {
+        float: none;
+        width: 100%; /* Full width for better mobile view */
+        margin-top: 20px; /* Adds space above the aside */
+    }
+}
+
